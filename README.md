@@ -1,5 +1,5 @@
-# Neovim config files
+# Vim configuration file
 
-My configuration files for Neovim.
-
-Using Luke Smith's `neovim` configs.
+Actively used plugin list:
+- vim-airline/vim-airline
+- vimwiki/vimwiki
