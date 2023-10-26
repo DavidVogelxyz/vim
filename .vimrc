@@ -19,7 +19,9 @@ set softtabstop=4
 set tabstop=4
 
 set termguicolors
-colorscheme synthwave84
+set background=dark
+colorscheme gruvbox
+"colorscheme synthwave84
 set guifont=Source\ Code\ Pro:h20
 
 " Pathogen plugin manager
