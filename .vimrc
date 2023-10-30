@@ -55,10 +55,22 @@ map <C-u> <C-u>zz
 map n nzzzv
 map N Nzzzv
 
-" added for iVim
-"map <C-f> :FZF<CR>
-map <C-j> :e ~/.vimrc<CR>
-map <C-k> :e ~/documents<CR>
+" navigational remaps
+" need 4 harpoons for now, with a copy for familiarity
+map <leader>a mJ
+map <leader>j mJ
+map <leader>k mK
+map <leader>l mL
+map <leader>; mO
+
+" instead of UI, return to mark 'H', which are the maps for 'jkl'
+map <C-h> 'H
+
+" marks
+map <C-j> 'J
+map <C-k> 'K
+map <C-l> 'L
+map <C-;> 'O
 
 " -----------------------------------------------
 " Luke Smith copypasta
