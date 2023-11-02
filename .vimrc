@@ -45,7 +45,7 @@ map <leader>pv :Ex<CR>
 nnoremap <leader><leader> :w<CR>
 
 " lets you SHOUTOUT .vimrc real easy
-map <leader><CR> :so ~/.vimrc<CR>
+map <leader><CR> :so %<CR>
 
 " the cursor stays at 'zz' using ctrl+u and ctrl+d
 map <C-d> <C-d>zz
