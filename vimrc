@@ -131,3 +131,22 @@ set backspace=start,eol,indent
 "set showcmd
 " display completion matches in a status line
 set wildmenu
+
+" -----------------------------------------------
+" new additions
+" -----------------------------------------------
+
+" enable/disable transparent background (works on Linux, not on iVim/iPad)
+let t:is_transparent == 0
+
+function! Toggle_transparent_background()
+    if t:is_transparent == 0
+        hi Normal guibg=NONE ctermbg=NONE
+        let t:is_transparent == 1
+    else
+        hi Normal guibg=#282828 ctermbg=black
+        let t:is_transparent == 0
+    endif
+endfunction
+
+nnoremap <C-x><C-t> :call Toggle_transparent_background()<CR>
