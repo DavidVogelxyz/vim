@@ -137,15 +137,15 @@ set wildmenu
 " -----------------------------------------------
 
 " enable/disable transparent background (works on Linux, not on iVim/iPad)
-let t:is_transparent == 0
+let t:is_transparent = 0
 
 function! Toggle_transparent_background()
     if t:is_transparent == 0
         hi Normal guibg=NONE ctermbg=NONE
-        let t:is_transparent == 1
+        let t:is_transparent = 1
     else
         hi Normal guibg=#282828 ctermbg=black
-        let t:is_transparent == 0
+        let t:is_transparent = 0
     endif
 endfunction
 
