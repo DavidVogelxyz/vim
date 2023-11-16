@@ -155,5 +155,5 @@ endfunction
 nnoremap <C-x><C-t> :call Toggle_transparent_background()<CR>
 
 " maps for fuzzyy - a telescope-like plugin for Vim (doesn't work on iVim)
-"map <Leader>f :FuzzyColors<CR>
-"map <Leader>g :FuzzyFiles<CR>
+"map <Leader>f :FuzzyFiles<CR>
+"map <Leader>g :FuzzyColors<CR>
