@@ -21,7 +21,6 @@ set tabstop=4
 set termguicolors
 set background=dark
 colorscheme gruvbox
-"colorscheme synthwave84
 set guifont=Source\ Code\ Pro:h20
 
 " Pathogen plugin manager
@@ -44,7 +43,7 @@ map <leader>pv :Ex<CR>
 " map leader+leader to save current file in normal mode
 nnoremap <leader><leader> :w<CR>
 
-" lets you SHOUTOUT .vimrc real easy
+" lets you SHOUTOUT a file real easy
 map <leader><CR> :so %<CR>
 
 " the cursor stays at 'zz' using ctrl+u and ctrl+d
