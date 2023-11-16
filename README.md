@@ -1,6 +1,7 @@
 # Vim configuration file
 
 Actively used plugin list:
+- ctrlpvim/ctrlp.vim
 - vim-airline/vim-airline
 - vimwiki/vimwiki
 

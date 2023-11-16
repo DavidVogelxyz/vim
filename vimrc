@@ -136,7 +136,11 @@ set wildmenu
 " new additions
 " -----------------------------------------------
 
-" enable/disable transparent background (works on Linux, not on iVim/iPad)
+" map Ctrl-f to CtrlP - a fuzzy finder plugin
+map <C-f> :CtrlP .<CR>
+map <C-p> :CtrlP .<CR>
+
+" enable/disable transparent background (doesn't work on iVim)
 let t:is_transparent = 0
 
 function! Toggle_transparent_background()
@@ -150,3 +154,7 @@ function! Toggle_transparent_background()
 endfunction
 
 nnoremap <C-x><C-t> :call Toggle_transparent_background()<CR>
+
+" maps for fuzzyy - a telescope-like plugin for Vim (doesn't work on iVim)
+"map <Leader>f :FuzzyColors<CR>
+"map <Leader>g :FuzzyFiles<CR>
