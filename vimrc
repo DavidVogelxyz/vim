@@ -135,7 +135,10 @@ set wildmenu
 " new additions
 " -----------------------------------------------
 
-" map Ctrl-f to CtrlP - a fuzzy finder plugin
+" CtrlP - a fuzzy finder plugin
+let g:ctrlp_map = ''
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+
 map <C-f> :CtrlP .<CR>
 map <C-p> :CtrlP .<CR>
 
