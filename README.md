@@ -6,6 +6,7 @@ The following are plugins that have been hardcoded:
 
 The following are plugins that have not been hardcoded, and therefore require manual installation into the "bundle" directory:
 - ctrlpvim/ctrlp.vim
+- donaldttt/fuzzyy (doesn't work on iVim)
 - vim-airline/vim-airline
 - vimwiki/vimwiki
 
