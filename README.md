@@ -23,10 +23,10 @@ The following are plugins that have been hardcoded, despite having airline theme
 - artanikin/vim-synthwave84
 - ayu-theme/ayu-vim
 - ghifarit53/tokyonight-vim
-- joshdick/onedark.vim
+- joshdick/onedark.vim (doesn't load properly without other files)
 - lifepillar/vim-gruvbox8
 - morhetz/gruvbox
-- sainnhe/gruvbox-material
+- sainnhe/gruvbox-material (doesn't load properly without other files)
 - thedenisnikulin/vim-cyberpunk
 
 Potentially, the themes with more than 1 file can also be added to the "bundle" directory.
