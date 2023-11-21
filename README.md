@@ -1,6 +1,9 @@
 # Vim configuration file
 
-The following are plugins that have been hardcoded:
+## Plugins
+
+The following are plugins that have been hardcoded with no issues:
+- jiangmiao/auto-pairs
 - tpope/vim-pathogen
 - tpope/vim-surround
 
@@ -10,23 +13,23 @@ The following are plugins that have not been hardcoded, and therefore require ma
 - vim-airline/vim-airline
 - vimwiki/vimwiki
 
-The same is true for theme packages. The themes that have been hardcoded, unless specified, are those composed of only a single file.
+## Themes
 
-The following are plugins that have been hardcoded:
+The following are themes that have been hardcoded with no issues:
 - connorholyday/vim-snazzy
 - itsjunetime/rose-pine-vim
 - NLKNguyen/papercolor-theme
 - raphamorim/lucario
 - rose-pine/vim
 
-The following are plugins that have been hardcoded, despite having airline themes in the "autoload" directory:
+The following are themes that have been hardcoded, despite having airline themes in their "autoload" directories:
 - artanikin/vim-synthwave84
 - ayu-theme/ayu-vim
 - ghifarit53/tokyonight-vim
-- joshdick/onedark.vim (doesn't load properly without other files)
 - lifepillar/vim-gruvbox8
 - morhetz/gruvbox
-- sainnhe/gruvbox-material (doesn't load properly without other files)
 - thedenisnikulin/vim-cyberpunk
 
-Potentially, the themes with more than 1 file can also be added to the "bundle" directory.
+The following themes only work properly when installed to the "bundle" directory:
+- joshdick/onedark.vim
+- sainnhe/gruvbox-material
