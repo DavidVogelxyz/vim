@@ -33,3 +33,7 @@ The following are themes that have been hardcoded, despite having airline themes
 The following themes only work properly when installed to the "bundle" directory:
 - joshdick/onedark.vim
 - sainnhe/gruvbox-material
+
+## Current notes
+
+Attempt a `:PlugInstall` when first running the text editor. If plug.vim doesn't work, remove the file and clone plugins into the "bundle" directory.
