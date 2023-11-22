@@ -4,6 +4,36 @@
 
 let mapleader =" "
 
+" Plug.vim plugin manager
+" (only if Plug is detected)
+"if ! filereadable(expand('~/.vim/autoload/plug.vim'))
+"    echo "Downloading junegunn/vim-plug to manage plugins..."
+"    silent !mkdir -p ~/.vim/autoload/
+"    silent !curl "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" > ~/.vim/autoload/plug.vim
+"    autocmd VimEnter * PlugInstall
+"endif
+
+if filereadable(expand('~/.vim/autoload/plug.vim'))
+    call plug#begin('~/.vim/plugged')
+    Plug 'ctrlpvim/ctrlp.vim'
+    Plug 'donaldttt/fuzzyy'
+    Plug 'joshdick/onedark.vim'
+    Plug 'mbbill/undotree'
+    Plug 'vim-airline/vim-airline'
+    Plug 'vimwiki/vimwiki'
+    call plug#end()
+endif
+
+" Pathogen plugin manager
+if ! filereadable(expand('~/.vim/autoload/plug.vim'))
+    call pathogen#infect()
+    call pathogen#helptags()
+endif
+
+filetype off
+filetype plugin indent on
+syntax on
+
 " favorites from neovim
 set expandtab
 "set mouse=a
@@ -22,13 +52,6 @@ set termguicolors
 set background=dark
 colorscheme gruvbox
 set guifont=Source\ Code\ Pro:h20
-
-" Pathogen plugin manager
-filetype off
-call pathogen#infect()
-call pathogen#helptags()
-filetype plugin indent on
-syntax on
 
 " -----------------------------------------------
 " REMAPS
