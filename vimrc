@@ -69,9 +69,12 @@ nnoremap <leader><leader> :w<CR>
 " lets you SHOUTOUT a file real easy
 map <leader><CR> :so %<CR>
 
-" the cursor stays at 'zz' using ctrl+u and ctrl+d
+" the cursor stays at 'zz' when using ctrl+u and ctrl+d
 map <C-d> <C-d>zz
 map <C-u> <C-u>zz
+
+" the cursor stays at 'zz' when using G
+map G Gzz
 
 " the cursor stays at 'zz' when using search
 map n nzzzv
