@@ -53,6 +53,22 @@ set background=dark
 colorscheme gruvbox
 set guifont=Source\ Code\ Pro:h20
 
+" cursor settings
+" options for cursor:
+" Ps = 0  -> blinking block.
+" Ps = 1  -> blinking block (default).
+" Ps = 2  -> steady block.
+" Ps = 3  -> blinking underline.
+" Ps = 4  -> steady underline.
+" Ps = 5  -> blinking bar (xterm).
+" Ps = 6  -> steady bar (xterm).
+
+" EI = cursor for "everything else" = 2 = block cursor
+let &t_EI = "\e[2 q"
+
+" SI = cursor for "insert mode" = 6 = bar cursor
+let &t_SI = "\e[6 q"
+
 " -----------------------------------------------
 " REMAPS
 " -----------------------------------------------
