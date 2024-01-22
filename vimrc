@@ -200,7 +200,10 @@ endfunction
 nnoremap <C-x><C-t> :call Toggle_transparent_background()<CR>
 
 " maps for fuzzyy - a telescope-like plugin for Vim (doesn't work on iVim)
-"map <Leader>ff :FuzzyFiles<CR>
+" there may be a delay with <Leader>f after fresh install of fuzzyy.vim
+" use `:verbose map <Leader>f` to find other remaps
+" hint: delay is because of remaps in 'plugged/fuzzyy/plugin/fuzzyy.vim'
+" just comment these out with '#'; using '"' causes error message
 "map <Leader>f :FuzzyFiles<CR>
 "map <Leader>g :FuzzyColors<CR>
 "map <C-f> :FuzzyFiles<CR>
