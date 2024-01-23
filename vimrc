@@ -43,6 +43,7 @@ set scrolloff=9
 set smartindent
 set splitbelow splitright
 set title
+set incsearch
 
 set shiftwidth=4
 set softtabstop=4
