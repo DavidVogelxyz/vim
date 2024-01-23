@@ -74,7 +74,7 @@ let &t_SI = "\e[6 q"
 " -----------------------------------------------
 
 " Replace all is aliased to S.
-nnoremap S :%s//g<Left><Left>
+nnoremap S :%s//gc<Left><Left><Left>
 
 " map leader+pv to open Ex
 map <leader>pv :Ex<CR>
