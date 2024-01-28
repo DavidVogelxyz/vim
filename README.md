@@ -1,39 +1,32 @@
-# Vim configuration file
+# Vim configurations
+
+A vimrc for Vim.
+
+This is for servers, where it often doesn't make sense to install `neovim`.
+
+An example of this is on Debian servers. Because the Debian repo has an old version of `neovim`, getting an up-to-date version requires downloading 200+ MBs of data. In addition, building `neovim` from source takes a bit of time. Using `vim` in this case is a preferable solution.
 
 ## Plugins
 
-The following are plugins that have been hardcoded with no issues:
+- donaldttt/fuzzyy
 - jiangmiao/auto-pairs
-- tpope/vim-pathogen
+- junegunn/vim-plug
 - tpope/vim-surround
-
-The following are plugins that have not been hardcoded, and therefore require manual installation into the "bundle" directory:
-- ctrlpvim/ctrlp.vim
-- donaldttt/fuzzyy (doesn't work on iVim)
 - vim-airline/vim-airline
 - vimwiki/vimwiki
 
 ## Themes
 
-The following are themes that have been hardcoded with no issues:
+- artanikin/vim-synthwave84
+- ayu-theme/ayu-vim
 - connorholyday/vim-snazzy
+- ghifarit53/tokyonight-vim
 - itsjunetime/rose-pine-vim
+- joshdick/onedark.vim
+- lifepillar/vim-gruvbox8
+- morhetz/gruvbox
 - NLKNguyen/papercolor-theme
 - raphamorim/lucario
 - rose-pine/vim
-
-The following are themes that have been hardcoded, despite having airline themes in their "autoload" directories:
-- artanikin/vim-synthwave84
-- ayu-theme/ayu-vim
-- ghifarit53/tokyonight-vim
-- lifepillar/vim-gruvbox8
-- morhetz/gruvbox
-- thedenisnikulin/vim-cyberpunk
-
-The following themes only work properly when installed to the "bundle" directory:
-- joshdick/onedark.vim
 - sainnhe/gruvbox-material
-
-## Current notes
-
-Attempt a `:PlugInstall` when first running the text editor. If plug.vim doesn't work, remove the file and clone plugins into the "bundle" directory.
+- thedenisnikulin/vim-cyberpunk
