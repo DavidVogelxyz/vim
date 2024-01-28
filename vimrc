@@ -4,30 +4,40 @@
 
 let mapleader =" "
 
-" Plug.vim plugin manager
-" (only if Plug is detected)
-"if ! filereadable(expand('~/.vim/autoload/plug.vim'))
-"    echo "Downloading junegunn/vim-plug to manage plugins..."
-"    silent !mkdir -p ~/.vim/autoload/
-"    silent !curl "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" > ~/.vim/autoload/plug.vim
-"    autocmd VimEnter * PlugInstall
-"endif
+if ! filereadable(expand('~/.vim/autoload/plug.vim'))
+    echo "Downloading junegunn/vim-plug to manage plugins..."
+    silent !mkdir -p ~/.vim/autoload/
+    silent !curl "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" > ~/.vim/autoload/plug.vim
+    autocmd VimEnter * PlugInstall
+endif
 
 if filereadable(expand('~/.vim/autoload/plug.vim'))
     call plug#begin('~/.vim/plugged')
-    Plug 'ctrlpvim/ctrlp.vim'
+    Plug 'artanikin/vim-synthwave84'
+    Plug 'ayu-theme/ayu-vim'
+    Plug 'connorholyday/vim-snazzy'
     Plug 'donaldttt/fuzzyy'
+    Plug 'ghifarit53/tokyonight-vim'
+    Plug 'itsjunetime/rose-pine-vim'
+    Plug 'jiangmiao/auto-pairs'
     Plug 'joshdick/onedark.vim'
+    Plug 'lifepillar/vim-gruvbox8'
     Plug 'mbbill/undotree'
+    Plug 'morhetz/gruvbox'
+    Plug 'NLKNguyen/papercolor-theme'
+    Plug 'raphamorim/lucario'
+    Plug 'rose-pine/vim'
+    Plug 'sainnhe/gruvbox-material'
+    Plug 'thedenisnikulin/vim-cyberpunk'
+    Plug 'tpope/vim-surround'
     Plug 'vim-airline/vim-airline'
     Plug 'vimwiki/vimwiki'
     call plug#end()
 endif
 
-" Pathogen plugin manager
-if ! filereadable(expand('~/.vim/autoload/plug.vim'))
-    call pathogen#infect()
-    call pathogen#helptags()
+if filereadable(expand('~/.vim/plugged/vim-airline/autoload/airline/themes/dark.vim'))
+    colorscheme gruvbox
+    let g:airline_theme='dark'
 endif
 
 filetype off
@@ -51,7 +61,6 @@ set tabstop=4
 
 set termguicolors
 set background=dark
-colorscheme gruvbox
 set guifont=Source\ Code\ Pro:h20
 
 " cursor settings
@@ -145,12 +154,6 @@ function! ToggleHiddenAll()
 endfunction
 nnoremap <leader>h :call ToggleHiddenAll()<CR>
 
-" -----------------------------------------------
-" what follows comes from the guy who made iVim
-" -----------------------------------------------
-
-" System vimrc file for iVim
-
 " use vim, rather than vi, settings
 set nocompatible
 
@@ -178,15 +181,9 @@ set wildmenu
 " new additions
 " -----------------------------------------------
 
-" CtrlP - a fuzzy finder plugin
-let g:ctrlp_map = ''
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
-
-map <C-f> :CtrlP .<CR>
-map <C-p> :CtrlP .<CR>
-
-" enable/disable transparent background (doesn't work on iVim)
-let t:is_transparent = 0
+" enable/disable transparent background
+hi Normal guibg=NONE ctermbg=NONE
+let t:is_transparent = 1
 
 function! Toggle_transparent_background()
     if t:is_transparent == 0
@@ -200,12 +197,20 @@ endfunction
 
 nnoremap <C-x><C-t> :call Toggle_transparent_background()<CR>
 
-" maps for fuzzyy - a telescope-like plugin for Vim (doesn't work on iVim)
+" maps for fuzzyy - a telescope-like plugin for Vim
 " there may be a delay with <Leader>f after fresh install of fuzzyy.vim
 " use `:verbose map <Leader>f` to find other remaps
 " hint: delay is because of remaps in 'plugged/fuzzyy/plugin/fuzzyy.vim'
 " just comment these out with '#'; using '"' causes error message
-"map <Leader>f :FuzzyFiles<CR>
-"map <Leader>g :FuzzyColors<CR>
-"map <C-f> :FuzzyFiles<CR>
-"map <C-p> :FuzzyGitFiles<CR>
+map <Leader>f :FuzzyFiles<CR>
+map <Leader>g :FuzzyColors<CR>
+map <C-f> :FuzzyFiles<CR>
+map <C-p> :FuzzyGitFiles<CR>
+
+" fixing unsupported characters in vim-airline
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+let g:airline_symbols.colnr = ' C:'
+let g:airline_symbols.linenr = ' L:'
+let g:airline_symbols.maxlinenr = '☰ '

@@ -1,4 +1,4 @@
 .netrwhist
-bundle/
+autoload/
 plugged/
 shortcuts.vim
