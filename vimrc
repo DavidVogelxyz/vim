@@ -1,8 +1,12 @@
-" -----------------------------------------------
+" ----------------------------
 " vimrc for Vim
-" -----------------------------------------------
+" ----------------------------
 
 let mapleader =" "
+
+" ----------------------------
+" PLUGINS
+" ----------------------------
 
 if ! filereadable(expand('~/.vim/autoload/plug.vim'))
     echo "Downloading junegunn/vim-plug to manage plugins..."
@@ -35,35 +39,52 @@ if filereadable(expand('~/.vim/autoload/plug.vim'))
     call plug#end()
 endif
 
+" ----------------------------
+" COLORSCHEME
+" ----------------------------
+
 if filereadable(expand('~/.vim/plugged/vim-airline/autoload/airline/themes/dark.vim'))
     colorscheme gruvbox
     let g:airline_theme='dark'
 endif
 
+" ----------------------------
+" OPTIONS
+" ----------------------------
+
 filetype off
-filetype plugin indent on
-syntax on
+filetype plugin indent on " enable file type detection
+syntax on " enable syntax highlighting
 
-" favorites from neovim
-set expandtab
-"set mouse=a
-set noruler
-set number relativenumber
-set scrolloff=9
-set smartindent
-set splitbelow splitright
-set title
-set incsearch
-
-set shiftwidth=4
-set softtabstop=4
-set tabstop=4
-
-set termguicolors
+" colors and background settings
 set background=dark
+set termguicolors
+
+set backspace=start,eol,indent " allow backspacing over everything
+set encoding=utf-8 " set default encoding
+set expandtab " convert tabs to spaces
 set guifont=Source\ Code\ Pro:h20
+"set guioptions-=r " do not always show the right scroll bar
+set incsearch " set incremental search
+"set mouse=a " enable mouse mode
+set nocompatible " use vim, rather than vi, settings
+set noruler
+set number relativenumber " enable line numbers and relative line numbers
+"set ruler " show cursor position
+set scrolloff=9 " set minimum line buffer during scroll to "n" lines
+set shiftwidth=4 " the number of spaces inserted for each indentation
+"set showcmd " display incomplete commands
+set smartindent " make indenting smarter again
+set softtabstop=4 " number of spaces that a tab counts for while performing editing operations
+set splitbelow splitright " splits open at the bottom and right, which is non-retarded, unlike vim defaults.
+set tabstop=4 " insert 'n' spaces for a tab
+set title " set title to be file name, rather than 'vim'
+set wildmenu " display completion matches in a status line
 
 " cursor settings
+let &t_SI = "\e[6 q" " SI = cursor for "insert mode" = 6 = bar cursor
+let &t_EI = "\e[2 q" " EI = cursor for "everything else" = 2 = block cursor
+
 " options for cursor:
 " Ps = 0  -> blinking block.
 " Ps = 1  -> blinking block (default).
@@ -73,15 +94,9 @@ set guifont=Source\ Code\ Pro:h20
 " Ps = 5  -> blinking bar (xterm).
 " Ps = 6  -> steady bar (xterm).
 
-" EI = cursor for "everything else" = 2 = block cursor
-let &t_EI = "\e[2 q"
-
-" SI = cursor for "insert mode" = 6 = bar cursor
-let &t_SI = "\e[6 q"
-
-" -----------------------------------------------
+" ----------------------------
 " REMAPS
-" -----------------------------------------------
+" ----------------------------
 
 " Replace all is aliased to S.
 nnoremap S :%s//gc<Left><Left><Left>
@@ -123,9 +138,9 @@ map <C-k> 'K
 map <C-l> 'L
 map <C-;> 'O
 
-" -----------------------------------------------
+" ----------------------------
 " Luke Smith copypasta
-" -----------------------------------------------
+" ----------------------------
 
 " Automatically deletes all trailing whitespace and newlines at end of file on save. & reset cursor position
 autocmd BufWritePre * let currPos = getpos(".")
@@ -154,37 +169,13 @@ function! ToggleHiddenAll()
 endfunction
 nnoremap <leader>h :call ToggleHiddenAll()<CR>
 
-" use vim, rather than vi, settings
-set nocompatible
-
-" set default encoding to UTF-8
-set encoding=utf-8
-
-" enable syntax highlighting
-syntax on
-" enable file type detection
-filetype plugin indent on
-
-" do not always show the right scroll bar
-"set guioptions-=r
-" allow backspacing over everything
-set backspace=start,eol,indent
-
-" show cursor position
-"set ruler
-" display incomplete commands
-"set showcmd
-" display completion matches in a status line
-set wildmenu
-
-" -----------------------------------------------
+" ----------------------------
 " new additions
-" -----------------------------------------------
+" ----------------------------
 
 " enable/disable transparent background
 hi Normal guibg=NONE ctermbg=NONE
 let t:is_transparent = 1
-
 function! Toggle_transparent_background()
     if t:is_transparent == 0
         hi Normal guibg=NONE ctermbg=NONE
@@ -194,7 +185,6 @@ function! Toggle_transparent_background()
         let t:is_transparent = 0
     endif
 endfunction
-
 nnoremap <C-x><C-t> :call Toggle_transparent_background()<CR>
 
 " maps for fuzzyy - a telescope-like plugin for Vim
